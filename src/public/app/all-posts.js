@@ -27,6 +27,8 @@ async function loadPosts() {
                         body: body
                     }, (data) => {
                         console.log('created');
+                        $('#comment-body').empty();
+                        window.alert('Comment Successfully created! Refresh to view changes.');
                     })
                 })
             })

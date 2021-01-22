@@ -11,6 +11,7 @@ $(() => {
             body: post_body.val()
         }, () => {
             console.log('created');
+            window.alert('Post Successfully created! Refresh to view changes.');
         })
     })
 })

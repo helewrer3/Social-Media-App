@@ -13,7 +13,7 @@ app.use('/api/posts', postRoute)
 app.use('/api/comments', commentRoute)
 app.use('/', express.static(path.join(__dirname, '/src/public')));
 
-db.sync()
+db.sync({force: true})
 .then(() => {
     const port = process.env.PORT;
     app.listen(process.env.PORT, () => console.log(process.env.PORT));
