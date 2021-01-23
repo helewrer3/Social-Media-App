@@ -6,7 +6,8 @@ A social media web-app focused on anonimity where users can create and read post
 ## Technologies Used
 + NodeJS
 + Express
-+ SQLite3
++ SQLite3 (for local deployment)
++ PostgreSQL (for heroku deployment)
 + Sequelize
 + Bootstrap
 + HTML, CSS, Javascript, SQL
@@ -30,7 +31,7 @@ Simply clone the repo locally and run the following commands at the root of the 
 ```
 Log into the port number 3000 or whatever port number you have set as your environment variable of node.
 
-## Dependencies
+### Dependencies
 To run this app locally, you need to have [NodeJS](https://nodejs.org/en/) installed in your system.
 
 ## Expandability
