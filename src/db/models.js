@@ -1,9 +1,12 @@
 const sequelize = require('sequelize');
-
-const db = new sequelize({
-    dialect: 'sqlite',
-    storage: __dirname + '/storage.db'
-});
+var db;
+if(process.env.DATABASE_URL) db = new sequelize(process.env.DATABASE_URL);
+else{
+    db = new sequelize({
+        dialect: 'sqlite',
+        storage: __dirname + '/storage.db'
+    });
+}
 
 const col_id = {
     type: sequelize.DataTypes.INTEGER,
