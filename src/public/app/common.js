@@ -14,7 +14,7 @@ function loginIfNeeded() {
         })
     }
     else {
-        $.get(`/api/users/${window.localStorage.user.id}`, {}, (data) => {
+        $.get(`/api/users/${JSON.parse(window.localStorage.user).id}`, {}, (data) => {
             if(data == "Invalid User Id/Name"){
                 $.post('/api/users', {}, (data) => {
                     console.log(`Logged in as ${data.name}`);

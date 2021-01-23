@@ -9,11 +9,7 @@ async function createUser() {
 }
 
 async function getUserById(id) {
-    return await User.findOne({where: {id}})
-}
-
-async function getUserByName(name) {
-    return await User.findOne({where: {name}})
+    return await User.findOne({where: {id: id}})
 }
 
 // async function task(){
@@ -28,4 +24,4 @@ async function getUserByName(name) {
 
 // task();
 
-module.exports = {createUser, getUserById, getUserByName}
+module.exports = {createUser, getUserById}
