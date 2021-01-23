@@ -9,6 +9,17 @@ const adjectives = [
     'Evasive',
     'Easy',
     'Slippery',
+    'Testy',
+    'Trite',
+    'Vigorous',
+    'Clever',
+    'Sudden',
+    'Bright',
+    'Envious',
+    'Sulky',
+    'Crazy',
+    'Metal',
+    'Heavy'
 ]
 
 const animals = [
@@ -21,12 +32,21 @@ const animals = [
     'Mare',
     'Parrot',
     'Tiger',
-    'Lion'
+    'Lion',
+    'Squid',
+    'Shark',
+    'Snail',
+    'Eagle',
+    'Hawk',
+    'Ape',
+    'Gorilla',
+    'Hen',
+    'Bull'
 ]
 
 function generate() {
-    const first = adjectives[Math.floor(Math.random()*10)];
-    const last = animals[Math.floor(Math.random()*10)];
+    const first = adjectives[Math.floor(Math.random()*adjectives.length)];
+    const last = animals[Math.floor(Math.random()*animals.length)];
     return `${first} ${last}`;
 }
 

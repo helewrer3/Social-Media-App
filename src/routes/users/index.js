@@ -6,7 +6,7 @@ route.get('/:id', async (req, res) => {
     if(isNaN(req.params.id)) user = await getUserByName(req.params.id);
     else user = await getUserById(req.params.id);
     if(user) res.status(200).send(user);
-    else res.status(404).send('Invalid User Id/Name');
+    else res.send('Invalid User Id/Name');
 })
 
 route.post('/', async(req, res) => {

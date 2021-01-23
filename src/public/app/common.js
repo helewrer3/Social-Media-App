@@ -14,7 +14,18 @@ function loginIfNeeded() {
         })
     }
     else {
-        console.log(`Resuming session as ${currentUser.name}`);
-        $('#nav-username').text(currentUser.name)
+        $.get(`/api/users/${window.localStorage.user.id}`, {}, (data) => {
+            if(data == "Invalid User Id/Name"){
+                $.post('/api/users', {}, (data) => {
+                    console.log(`Logged in as ${data.name}`);
+                    window.localStorage.user = JSON.stringify(data);
+                    $('#nav-username').text(data.name)
+                })
+            }
+            else{
+                console.log(`Resuming session as ${currentUser.name}`);
+                $('#nav-username').text(currentUser.name)
+            }
+        })
     }
 }
